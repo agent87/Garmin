@@ -1,1 +1,1 @@
-# garmin-data-analytics
+# Garmin watch data parsing & analytics
