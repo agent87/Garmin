@@ -1,0 +1,11 @@
+certifi==2020.4.5.1
+cycler==0.10.0
+fitdecode==0.6.0
+fitparse==1.1.0
+kiwisolver==1.2.0
+matplotlib==3.2.1
+numpy==1.18.2
+pyparsing==2.4.7
+python-dateutil==2.8.1
+pyudev==0.22.0
+six==1.14.0
