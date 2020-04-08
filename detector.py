@@ -1,5 +1,12 @@
-import pyudev 
+import pyudev
 from source.sync import *
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+secret_key = config['DEFAULT']['SECRET_KEY'] # 'secret-key-of-myapp'
+ci_hook_url = config['CI']['HOOK_URL'] # 'web-hooking-url-from-ci-service'
 
 watch_name = "GARMIN"
 context = pyudev.Context()
@@ -18,11 +25,6 @@ def port_scan(watch_name):
                 break
 
 
-def local_sync():
-    print("this is the local sync")
-
-def cloud_sync():
-    print("This is the cloud sync")
 
 
 if port_scan(watch_name) == True:
