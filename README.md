@@ -5,13 +5,15 @@ because they run unsupported O.S such as LINUX plus also posses some \
 data science skills awaiting in the shelf
 
 ## Installation
-clone the git repository
-`git clone https://github.com/agent87/garmin-data-analytics.git`
-change to the garmin directory
-`cd garmin-data-analytics`
-create a conda env and install packages/libraries using the environment image
-`conda env create environment.yml`
-or install requried packages/libraries using PIP
-`pip install -r requirements.txt`
+clone the git repository\
+`git clone https://github.com/agent87/garmin-data-analytics.git`\
+
+change to the garmin directory\
+`cd garmin-data-analytics`\
+create a conda env and install packages/libraries using the environment image\
+`conda env create environment.yml`\
+
+or install requried packages/libraries using PIP\
+`pip install -r requirements.txt`\
 
 
