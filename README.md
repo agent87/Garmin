@@ -10,6 +10,7 @@ clone the git repository\
 
 change to the garmin directory\
 `cd garmin-data-analytics`\
+
 create a conda env and install packages/libraries using the environment image\
 `conda env create environment.yml`\
 
