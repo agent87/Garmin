@@ -1,10 +1,9 @@
 from dirsync import sync
-
+from os import system 
 
 
 class synchronise():
     def local_(garmin, back_folder_name): #Include Garmin watch mount point, back-up folder location
-        print("this is the local sync function")
         sync(garmin, back_folder_name, 'sync', purge = True, create=True)
 
     def cloud_(self):
@@ -15,4 +14,3 @@ class synchronise():
 
 
 
-synchronise.local_("/media/sangman/GARMIN","")
