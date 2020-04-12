@@ -19,6 +19,7 @@ based on data science facts.
    :caption: Getting Started:
 
    installation
+   tutorials
 
 
 
