@@ -10,12 +10,33 @@ except FitParseError as e:
     print("Error while parsing .FIT file: %s" % e)
     sys.exit(1)
 
+
 df = DataFrame()
 
 
-for record in fitfile.get_messages():#'record'):
-    df
-    print(record.name)
+'''
+
+for header in headers:
+    if header in df.columns:
+        pass
+    elif header is not df.count:
+        df[header] = None
+
+df.info()
+'''
+
+class create_df:
+    def list_headers(fitfile):
+        headers_list = []
+        for record in fitfile.get_messages():
+            headers_list.append("type")
+            for record_data in record:
+                headers_list.append(record_data.name)
+        return headers_list
+
+headers = create_df.list_headers(fitfile)
+print(len(headers))
+
     # Go through all the data entries in this record
     #for record_data in record:
         #print(count)
