@@ -3,3 +3,5 @@
 *.TXT
 *.xml
 *.csv
+/home/sangman/Desktop/source/garmin-data-analytics/data/converted/log.txt
+/home/sangman/Desktop/source/garmin-data-analytics/.vscode
