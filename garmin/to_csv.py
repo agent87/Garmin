@@ -26,6 +26,20 @@ class compile_list:
 
 
 class export_csv:
+    def output_path(filepath):
+        path = r"{}".format(filepath[0])
+        path = path.split("/")
+        path[path.index("raw")] = "converted"
+        return "/".join(path)
+
+    def update_log(filename):
+        #update logs files
+        already_csv = open("../data/converted/log.txt",'r').read().splitlines()
+        already_csv.append(filename)
+        with open("../data/converted/log.txt", 'w') as file_handler:
+            for item in already_csv:
+                file_handler.write(f"{item}\n")
+
     def list_headers(fitfile):
         headers_list = []
         for record in fitfile.get_messages():
@@ -52,19 +66,21 @@ class export_csv:
                 dataframe.loc[count, record_data.name] = record_data.value
             count += 1
 
-    def export(output_path):
+    def export(filepath, output_path):
         try:
-            fitfile = FitFile('data/raw/ACTIVITY/A2OJ1736.FIT')
+            fitfile = FitFile(filepath)
             fitfile.parse()
         except FitParseError as e:
-            print("Error while parsing .FIT file: %s" % e)
+            print("Error while parsing .FIT file: %s".format(e))
             sys.exit(1)
         df = DataFrame()
         export_csv.df_with_headers(export_csv.list_headers(fitfile), df)
         export_csv.data_entry(export_csv.list_headers(fitfile), df, fitfile)
         df.to_csv(output_path)
+        export_csv.update_log()
+        
         
 if __name__ == "__main__":
-    #export_csv.export('test_2.csv')
-    l = compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw"))
-    print(len(l))
+    #l = compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw"))
+    #export_csv.update_log("BLABLA")
+    #export_csv.output_path(compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw")))
