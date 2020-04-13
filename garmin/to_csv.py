@@ -27,8 +27,7 @@ class compile_list:
 
 class export_csv:
     def output_path(filepath):
-        path = r"{}".format(filepath[0])
-        path = path.split("/")
+        path = r"{}".format(filepath[0]).split("/")
         path[path.index("raw")] = "converted"
         return "/".join(path)
 
@@ -83,4 +82,4 @@ class export_csv:
 if __name__ == "__main__":
     #l = compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw"))
     #export_csv.update_log("BLABLA")
-    #export_csv.output_path(compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw")))
+    print(export_csv.output_path(compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw"))))
