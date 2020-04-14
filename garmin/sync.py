@@ -10,13 +10,14 @@ config.read('config.ini')
 
 
 
-class synchronise():
+class synchronise:
     def local_(garmin, back_folder_name): #Include Garmin watch mount point, back-up folder location
-        sync(garmin+"/GARMIN", back_folder_name, 'sync', purge = True, create=True)
-        os.system("find . -type d | cpio -pdvm ../converted/")
+        sync(garmin+"/GARMIN", back_folder_name, 'sync', purge = False, create=True)
+        #os.system("find . -type d | cpio -pdvm ../converted/")
 
-    def cloud_(self):
+    def cloud_(garmin):
         print("This is the cloud sync function")
+        print(garmin)
     
     def rasp_(self):
         print("This is the raspberyy sync function")
