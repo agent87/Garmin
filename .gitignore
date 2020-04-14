@@ -3,6 +3,5 @@
 *.TXT
 *.xml
 *.csv
-data/converted/log.txt
+*.txt
 /home/sangman/Desktop/source/garmin-data-analytics/.vscode
-data/converted/log.txt
