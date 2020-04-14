@@ -16,7 +16,7 @@ class compile_list:
 
     def to_convert(find):
         to_convert = []
-        already_csv = open("../data/converted/log.txt",'r').read().splitlines()
+        already_csv = open("../data/converted/log.txt",'r+').read().splitlines()
         for fit_file_path in find:
             if ntpath.basename(fit_file_path) in already_csv:
                 pass
@@ -33,12 +33,15 @@ class export_csv:
         return "/".join(path).replace('FIT', 'csv')
 
     def update_log(filename):
+        f = open("../data/converted/log.txt", 'a+')  # open file in append mode
+        f.write(f"{filename}\n")
+        f.close()
         #update logs files
-        already_csv = open("../data/converted/log.txt",'r').read().splitlines()
-        already_csv.append(filename)
-        with open("../data/converted/log.txt", 'w') as file_handler:
-            for item in already_csv:
-                file_handler.write(f"{item}\n")
+        #already_csv = open("../data/converted/log.txt",'r+').read().splitlines()
+        #already_csv.append(filename)
+        #with open("../data/converted/log.txt", 'w+') as file_handler:
+        #    for item in already_csv:
+        #        file_handler.write(f"{item}\n")
 
     def list_headers(fitfile):
         headers_list = []
@@ -81,22 +84,10 @@ class export_csv:
         export_csv.update_log(ntpath.basename(filepath))
 
     def mass_export():
+        os.system("rsync -a --include '*/' --exclude '*' ../data/raw/ ../data/converted/")
         for files in compile_list.to_convert(compile_list.find()):
             export_csv.s_export(files)
-            print("Exporting the {} file!".format(ntpath.basename(files)))
 
-#export_csv.s_export("../data/raw/MONITOR/A3LD3812.FIT")
-#print(export_csv.output_path("../data/raw/MONITOR/A3LD3812.FIT"))
-export_csv.mass_export()
-
-'''        
+       
 if __name__ == "__main__":
-
-    #l = compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw"))
-    #export_csv.update_log("BLABLA")
-    #print(export_csv.output_path(compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw"))))
-    #for file_path in compile_list.to_convert("../data/converted/log.txt", compile_list.find("*.FIT","../data/raw")):
-    #    print(file_path)
-        
-    #    export(file_path, export_csv.output_path(file_path))
-'''
+    export_csv.mass_export()
