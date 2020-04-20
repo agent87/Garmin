@@ -5,3 +5,4 @@
 *.csv
 *.txt
 /home/sangman/Desktop/source/garmin-data-analytics/.vscode
+.vscode/launch.json
