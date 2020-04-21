@@ -16,4 +16,22 @@ create a conda env and install packages/libraries using the environment image\
 or install requried packages/libraries using PIP\
 `pip install -r requirements.txt`
 
+## configuration
+Present in The Garmin Folder is Configuration File which can modified to suit your needs
+
+Credential section
+`ID_FS_LABEL = GARMIN`
+`uname= default_uname`
+`passwd = my_secret_password`
+`user = root`
+
+
+Auto Sync Function
+`rasp_sync = False`   #Sync files on raspberry pi
+`cloud_sync = False`  #automatic upload to Garmin connect platform
+`local_sync = True`  #auto-back up on local machine
+
+Automatic device mount Detection
+`auto_detect = False`
+  
 
