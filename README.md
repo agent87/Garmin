@@ -27,7 +27,7 @@ Credential section
 
 
 Auto Sync Function
-`rasp_sync = False`   #Sync files on raspberry pi
+`rasp_sync = False`   #Sync files from remote raspberry pi
 `cloud_sync = False`  #automatic upload to Garmin connect platform
 `local_sync = True`  #auto-back up on local machine
 
