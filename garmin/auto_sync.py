@@ -18,7 +18,8 @@ for device in iter(monitor.poll, None):
         if device.action == "add":
             time.sleep(1)
             garmin_path = os.popen('lsblk -n {} -p -o MOUNTPOINT'.format(device.device_node)).read().strip('\n') 
-            synchronise.local_(garmin_path, "../data/raw/")
+            if config['sync']['local_'] == 'True':
+                synchronise.local_(garmin_path, "../data/raw/")
         else:
             pass
 
