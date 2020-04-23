@@ -19,19 +19,17 @@ or install requried packages/libraries using PIP\
 ## configuration
 Present in The Garmin Folder is Configuration File which can modified to suit your needs
 
-Credential section
-`ID_FS_LABEL = GARMIN`
-`uname= default_uname`
-`passwd = my_secret_password`
-`user = root`
+Credential section\
+`ID_FS_LABEL = GARMIN`\
+`uname= default_uname`\
+`passwd = my_secret_password`\
+`user = root`\
 
 
-Auto Sync Function
-`rasp_sync = False`   #Sync files from remote raspberry pi
-`cloud_sync = False`  #automatic upload to Garmin connect platform
-`local_sync = True`  #auto-back up on local machine
+Auto Sync Function\
+`rasp_sync = False`   #Sync files from remote raspberry pi\
+`cloud_sync = False`  #automatic upload to Garmin connect platform\
+`local_sync = True`  #auto-back up on local machine\
 
-Automatic device mount Detection
+Automatic device mount Detection\
 `auto_detect = False`
-  
-
