@@ -33,3 +33,5 @@ Auto Sync Function\
 
 Automatic device mount Detection\
 `auto_detect = False`
+
+## Data Parsing
