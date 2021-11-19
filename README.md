@@ -5,7 +5,7 @@ shelf.
 
 ## Installation
 clone the git repository\
-`git clone https://github.com/agent87/garmin-data-analytics.git`
+`git clone https://github.com/agent87/garmin.git`
 
 change to the garmin directory\
 `cd garmin-data-analytics`
